@@ -5,10 +5,29 @@
 
 #title-container{
     display: inline-block;
+    margin: 0px;
 }
 
 #action-button-container{
     display: inline-block;
+}
+
+#button-container{
+    display: inline-block;
+    float: right;
+    vertical-align: middle;
+}
+
+#add-new-employee-button{
+    background-color: #2DA01E;
+    border: none;
+    border-radius: 5px;
+    height: 32px;
+    font-weight:bold;
+    color: white;
+    padding-left: 8px;
+    padding-right: 8px;
+    font-size: 11px;
 }
 
 #input-container{
@@ -26,55 +45,75 @@
     display: inline-block;
 }
 
-#employee-table {
+#employee-table{
     width: 95%;
-    border: solid 1px black;
     margin: auto;
+    border-collapse: collapse;
+    border-spacing: 0px;
+    height: 24px !important;
 }
 
-#employee-table table, tr, th {
+#employee-table .th .tr{
     float: left;
-    height: 25px;
-    font-size: 9px;
+    height: 24px;
+    font-size: 14px;
     border: solid 1px black;
+    border-collapse: collapse;
 }
 
 #employee-table tr{
+    border: solid 1px black;
+    font-size: 14px;
+    height: 24px;
+}
+
+#employee-table th{
+    border: solid 1px black;
+    padding-left: 12px;
+    padding-right: 12px;
+    font-size: 10px;
+    height: 24px;
+}
+
+#employee-table #table-header{
     width: 100%;
+    background-color: red;
+    border: black solid 1px;
 }
 
 #employee-table #column-checkbox-header{
-    text-align: right;
-    width: 3%;
+    text-align: center;
+    width: 3.5%;
     vertical-align: middle;
     font-weight: bold;
 }
 
 #employee-table #employee-code-header{
     text-align: left;
-    width: 6%;
+    width: 6.5%;
     vertical-align: middle;
     font-weight: bold;
 }
 
 #employee-table #employee-name-header{
     text-align: left;
-    width: 9%;
+    width: 10%;
+    background-color: EDEEF1;
 }
 
 #employee-table #employee-gender-header{
     text-align: left;
-    width: 6%;
+    width: 7%;
 }
 
 #employee-table #employee-birthdate-header{
     text-align: center;
-    width: 6%;
+    width: 7%;
 }
 
 #employee-table #employee-social-id-header{
     text-align: left;
-    width: 9%;
+    width: 10%;
 }
 
 #employee-table #employee-title-header{
@@ -89,20 +128,20 @@
 
 #employee-table #employee-bank-numder-header{
     text-align: right;
-    width: 6%;
+    width: 7%;
 }
 
 #employee-table #employee-bank-name-header{
     text-align: left;
-    width: 9%;
+    width: 10%;
 }
 
 #employee-table #employee-bank-branch-header{
     text-align: left;
-    width: 9%;
+    width: 10%;
 }
 
 #employee-table #employee-option-header{
     text-align: center;
-    width: 6%;
+    width: 7%;
 }
