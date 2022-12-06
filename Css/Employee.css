@@ -1,0 +1,108 @@
+#body-header{
+    display: inline-block;
+    width: 100%;
+}
+
+#title-container{
+    display: inline-block;
+}
+
+#action-button-container{
+    display: inline-block;
+}
+
+#input-container{
+    border: solid 1px black;
+    vertical-align: center;
+    height: 24px !important;
+}
+
+#search-box{
+    border: none;
+    height: 24px !important;
+}
+
+#search-icon{
+    display: inline-block;
+}
+
+#employee-table {
+    width: 95%;
+    border: solid 1px black;
+    margin: auto;
+}
+
+#employee-table table, tr, th {
+    float: left;
+    height: 25px;
+    font-size: 9px;
+    border: solid 1px black;
+}
+
+#employee-table tr{
+    width: 100%;
+}
+
+#employee-table #column-checkbox-header{
+    text-align: right;
+    width: 3%;
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+#employee-table #employee-code-header{
+    text-align: left;
+    width: 6%;
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+#employee-table #employee-name-header{
+    text-align: left;
+    width: 9%;
+}
+
+#employee-table #employee-gender-header{
+    text-align: left;
+    width: 6%;
+}
+
+#employee-table #employee-birthdate-header{
+    text-align: center;
+    width: 6%;
+}
+
+#employee-table #employee-social-id-header{
+    text-align: left;
+    width: 9%;
+}
+
+#employee-table #employee-title-header{
+    text-align: left;
+    width: 12%;
+}
+
+#employee-table #employee-unit-header{
+    text-align: left;
+    width: 12%;
+}
+
+#employee-table #employee-bank-numder-header{
+    text-align: right;
+    width: 6%;
+}
+
+#employee-table #employee-bank-name-header{
+    text-align: left;
+    width: 9%;
+}
+
+#employee-table #employee-bank-branch-header{
+    text-align: left;
+    width: 9%;
+}
+
+#employee-table #employee-option-header{
+    text-align: center;
+    width: 6%;
+}

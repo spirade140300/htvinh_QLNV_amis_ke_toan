@@ -1,0 +1,21 @@
+.icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    overflow: hidden;
+}
+
+.search-icon {
+    width: 24px;
+    height: 24px;
+    background-image: url(/Resource/img/Sprites.64af8f61.svg);
+    background-position-x: -89px;
+    background-position-y: -32px;
+}   
+
+.refresh-icon{
+    width: 22px;
+    height: 22px;
+    background-image: url(/Resource/img/Sprites.64af8f61.svg);
+    background-position: (-22, -22);
+}
