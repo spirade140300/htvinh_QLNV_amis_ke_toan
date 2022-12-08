@@ -5,10 +5,18 @@
     overflow: hidden;
 }
 
+.temp-icon{
+    width: 24px;
+    height: 24px;
+    background-image: url(../Resource/img/Sprites.64af8f61.svg);
+    background-position-x: -1153px;
+    background-position-y: -28px;
+}
+
 .search-icon {
     width: 24px;
     height: 24px;
-    background-image: url(/Resource/img/Sprites.64af8f61.svg);
+    background-image: url(../Resource/img/Sprites.64af8f61.svg);
     background-position-x: -89px;
     background-position-y: -32px;
 }   
@@ -16,6 +24,48 @@
 .refresh-icon{
     width: 22px;
     height: 22px;
-    background-image: url(/Resource/img/Sprites.64af8f61.svg);
-    background-position: (-22, -22);
+    background-image: url(../Resource/img/Sprites.64af8f61.svg);
+    background-position-x: -89px;
+    background-position-y: -200px;
+}
+
+.side-menu-on-off-icon{
+    width: 22px;
+    height: 22px;
+    background-image: url(../Resource/img/Sprites.64af8f61.svg);
+    background-position-x: -843px;
+    background-position-y: -32px;
+}
+
+.open-more-menu{
+    width: 24px;
+    height: 24px;
+    background-image: url(../Resource/img/Sprites.64af8f61.svg);
+    background-position-x: -1153px;
+    background-position-y: -28px;
+}
+
+.company-icon{
+    width: 24px;
+    max-width: 100%;
+    height: 24px;
+    max-height: 100%;
+    background-image: url(../Resource/favicon.ico);
+    background: border-box;
+}
+
+.error{
+    color: red;
+}
+
+.text-box{
+    height: 28px;
+}
+
+.selector{
+    height: 28px;
+}
+
+.inline-block{
+    display: inline-block; 
 }
