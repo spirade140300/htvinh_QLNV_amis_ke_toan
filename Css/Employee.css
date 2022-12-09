@@ -1,6 +1,22 @@
 #body-header{
     display: inline-block;
-    width: 100%;
+    width: 80%;
+}
+
+#sidemenu{
+    width: 200px;
+    display: inline-block;
+}
+
+#header{
+    width: 80%;
+    align-self: auto;
+    margin-left: 20%;
+}
+
+#content{
+    width: 1000px;
+    display: inline-block;
 }
 
 #title-container{
@@ -50,7 +66,7 @@
 }
 
 #employee-table{
-    width: 95%;
+    /* width: 95%; */
     margin: auto;
     border-collapse: collapse;
     border-spacing: 0px;
