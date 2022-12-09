@@ -209,6 +209,10 @@
     width: 7%;
 }
 
+#detail-dialog{
+    padding: 24px;
+}
+
 #detail-dialog #is-customer{
     display: inline-block;
 }
@@ -253,9 +257,27 @@
 
 #dialog-employee-department{
     display: inline-block;
+    width: 366px;
 }
 
-#dialog-body{
-    margin-left: 16px;
-    margin-right: 16px;
+#dialog-employee-department select{
+    width: 366px;
+}
+
+#dialog-employee-code input{
+    border-color: solid 1px green;
+}
+
+#dialog-detail-header p{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#birthdate-select{
+    width: 200px;
+}
+
+
+#dialog-employee-title input{
+    width: 358px;
 }

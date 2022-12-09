@@ -2,7 +2,8 @@ $(function(){
     $( "#detail-dialog" ).dialog({
         autoOpen: false,
         width: 1024,
-        height: 720
+        height: 720,
+        maxwidth: 800
       });
 
     this.addNewOnClick = function(){
