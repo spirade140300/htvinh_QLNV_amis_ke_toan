@@ -1,0 +1,45 @@
+.side-menu{
+    display: table-cell;
+    vertical-align: middle;
+    width: 200px;
+    background-color: #393A3E;
+    font-weight: bold;
+    
+}
+
+.side-menu a:link{
+    text-decoration: none;
+}
+
+.side-menu a:visited{
+    text-decoration: none;
+}
+
+.side-menu a:hover{
+    text-decoration: none;
+}
+
+.side-menu a:active{
+    text-decoration: none;
+}
+
+.side-menu a{
+    color: white;
+    display: block;
+}
+
+.side-menu-text{
+    height: 24px;
+    top: -5px;
+    position: relative;;
+}
+
+#side-menu a{
+    height: 24px;
+}
+
+.side-menu-link{
+    display: flex;
+justify-content: center;
+align-items: center;
+}

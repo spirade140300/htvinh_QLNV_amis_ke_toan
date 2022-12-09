@@ -1,3 +1,7 @@
+$("#header").load("../Common/header.html"); 
+$("#footer").load("../Common/footer.html"); 
+$("#sidemenu").load("../Common/sidemenu.html"); 
+
 $(function(){
     $( "#detail-dialog" ).dialog({
         autoOpen: false,
