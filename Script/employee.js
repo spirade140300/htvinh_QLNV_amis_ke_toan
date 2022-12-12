@@ -48,6 +48,12 @@ this.LoadDataToGrid = function(data){
         let employeeBankNumber = data[i]["EmployeeBankNumber"] ? data[i]["EmployeeBankNumber"] : "Không có";
         let employeeBankName = data[i]["EmployeeBankName"] ? data[i]["EmployeeBankName"] : "Không có";
         let employeeBankBranch = data[i]["EmployeeBankBranch"] ? data[i]["EmployeeBankBranch"] : "Không có";
+        let employeeOption = `<p class="inline-block">sửa </p><select id="${employeeCode}" class="selector inline-block w-20">
+                                <option style="display: none"> </option>
+                                <option value="duplicate">Nhân bản</option>
+                                <option value="delete">Xóa</option>
+                                <option value="deactivate">Ngừng sử dụng</option>
+                            </select>`;
         let newRow = 
         `<tr id="table-row-${i}">
         <th id="column-checkbox"><input type="checkbox"></th>
@@ -61,7 +67,7 @@ this.LoadDataToGrid = function(data){
         <th id="employee-bank-numder">${employeeBankNumber}</th>
         <th id="employee-bank-name">${employeeBankName}</th>
         <th id="employee-bank-branch">${employeeBankBranch}</th>
-        <th id="employee-option"></th>
+        <th id="employee-option">${employeeOption}</th>
         </tr>`;
 
         $('#employee-table').append(newRow);

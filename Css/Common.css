@@ -1,177 +1,6 @@
-.icon {
-    display: inline-block;
-    width: 24px;
-    height: 24px;
-    overflow: hidden;
-}
-
-.temp-icon{
-    width: 24px;
-    height: 24px;
-    background-image: url(../Resource/img/Sprites.64af8f61.svg);
-    background-position-x: -1153px;
-    background-position-y: -28px;
-}
-
-.search-icon {
-    width: 24px;
-    height: 24px;
-    background-image: url(../Resource/img/Sprites.64af8f61.svg);
-    background-position-x: -89px;
-    background-position-y: -32px;
-}   
-
-.refresh-icon{
-    width: 22px;
-    height: 22px;
-    background-image: url(../Resource/img/Sprites.64af8f61.svg);
-    background-position-x: -89px;
-    background-position-y: -200px;
-}
-
-.side-menu-on-off-icon{
-    width: 22px;
-    height: 22px;
-    background-image: url(../Resource/img/Sprites.64af8f61.svg);
-    background-position-x: -843px;
-    background-position-y: -32px;
-}
-
-.open-more-menu{
-    width: 24px;
-    height: 24px;
-    background-image: url(../Resource/img/Sprites.64af8f61.svg);
-    background-position-x: -1153px;
-    background-position-y: -28px;
-}
-
-.company-icon{
-    width: 24px;
-    max-width: 100%;
-    height: 24px;
-    max-height: 100%;
-    background-image: url(../Resource/favicon.ico);
-    background: border-box;
-}
-
-.overall-icon{
-    width: 24px;
-    height: 24px;
-    background-image: url(../Resource/img/Sprites.64af8f61.svg);
-    background-position-x: -30px;
-    background-position-y: -1628px;
-}
-
-.cash-icon{
-    width: 24px;
-    height: 24px;
-    background-image: url(../Resource/img/Sprites.64af8f61.svg);
-    background-position-x: -73px;
-    background-position-y: -1628px;
-}
-
-.saving-icon{
-    width: 24px;
-    height: 24px;
-    background-image: url(../Resource/img/Sprites.64af8f61.svg);
-    background-position-x: -117px;
-    background-position-y: -1628px;
-}
-
-.buying-icon{
-    width: 24px;
-    height: 24px;
-    background-image: url(../Resource/img/Sprites.64af8f61.svg);
-    background-position-x: -161px;
-    background-position-y: -1628px;
-}
-
-.selling-icon{
-    width: 24px;
-    height: 24px;
-    background-image: url(../Resource/img/Sprites.64af8f61.svg);
-    background-position-x: -204px;
-    background-position-y: -1628px;
-}
-
-.invoice-manage-icon{
-    width: 24px;
-    height: 24px;
-    background-image: url(../Resource/img/Sprites.64af8f61.svg);
-    background-position-x: -249px;
-    background-position-y: -1628px;
-}
-
-.storage-icon{
-    width: 24px;
-    height: 24px;
-    background-image: url(../Resource/img/Sprites.64af8f61.svg);
-    background-position-x: -290px;
-    background-position-y: -1628px;
-}
-
-.tools-icon{
-    width: 24px;
-    height: 24px;
-    background-image: url(../Resource/img/Sprites.64af8f61.svg);
-    background-position-x: -336px;
-    background-position-y: -1628px;
-}
-
-.assets-icon{
-    width: 24px;
-    height: 24px;
-    background-image: url(../Resource/img/Sprites.64af8f61.svg);
-    background-position-x: -378px;
-    background-position-y: -1628px;
-}
-
-.tax-icon{
-    width: 24px;
-    height: 24px;
-    background-image: url(../Resource/img/Sprites.64af8f61.svg);
-    background-position-x: -423px;
-    background-position-y: -1628px;
-}
-
-.prices-icon{
-    width: 24px;
-    height: 24px;
-    background-image: url(../Resource/img/Sprites.64af8f61.svg);
-    background-position-x: -467px;
-    background-position-y: -1628px;
-}
-
-.general-icon{
-    width: 24px;
-    height: 24px;
-    background-image: url(../Resource/img/Sprites.64af8f61.svg);
-    background-position-x: -511px;
-    background-position-y: -1628px;
-}
-
-.cih-icon{
-    width: 24px;
-    height: 24px;
-    background-image: url(../Resource/img/Sprites.64af8f61.svg);
-    background-position-x: -547px;
-    background-position-y: -1628px;
-}
-
-.report-icon{
-    width: 24px;
-    height: 24px;
-    background-image: url(../Resource/img/Sprites.64af8f61.svg);
-    background-position-x: -590px;
-    background-position-y: -1628px;
-}
-
-.indepth-icon{
-    width: 24px;
-    height: 24px;
-    background-image: url(../Resource/img/Sprites.64af8f61.svg);
-    background-position-x: -634spx;
-    background-position-y: -1628px;
+@font-face {
+    font-family: notsans;
+    src: url(../Resource/fonts/notosans-regular.2cb88a13.woff2);
 }
 
 .error{
@@ -180,10 +9,27 @@
 
 .text-box{
     height: 24px;
+    padding: 6px;
+    border: none;
+    overflow: auto;
+    outline: none;
+
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
 }
 
 .selector{
     height: 28px;
+    padding: 6px;
+    border: none;
+    overflow: auto;
+    outline: none;
+
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    
 }
 
 .inline-block{
@@ -192,4 +38,19 @@
 
 body{
     margin: 0px;
+    font-family: notsans;
+}
+
+.no-default{
+    border: none;
+    overflow: auto;
+    outline: none;
+
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.b{
+    font-weight: bold;
 }

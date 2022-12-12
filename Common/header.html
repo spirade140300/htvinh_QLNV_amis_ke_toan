@@ -3,25 +3,26 @@
     <header>
         <script src="../Library/jquery-3.6.1.js"></script>
         <link rel="stylesheet" href="../Css/header.css">
+        <link rel="stylesheet" href="../Css/Common.css">
     </header>
     <body>
         <div id="header-left" class="inline-block">
-            <button>
-                <div></div>
+            <button class="no-default" id="menu-option-button">
+                <div class="menu-option-icon"></div>
             </button>
-            <select name="company-select" id="companies">
+            <select name="company-select" id="companies" class="selector">
                 <option value="volvo">Công ty sản xuất - thương mại - dịch vụ Hoàng Tử Vinh</option>
-              </select>
+            </select>
         </div>
         <div id="header-right" class="inline-block">
-            <div>
-
+            <div class="inline-block mr-16">
+                <div id="notification-icon" class="notification-icon"></div>
             </div>
-            <div>
-                <div>
-
+            <div class="inline-block">
+                <div class="inline-block">
+                    <div id="avatar-icon" class="avatar-icon"></div>
                 </div>
-                <select name="user" id="users">
+                <select name="user" id="users" class="selector inline-block">
                     <option value="volvo">Hoàng Tử Vinh</option>
                   </select>
             </div>

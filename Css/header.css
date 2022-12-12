@@ -2,12 +2,6 @@
     float: right;
 }
 
-#companies{
-    border: none;
-    height: 36px;
-}
-
-#header-left{
-    margin-top: auto;
-    margin-bottom: auto;
+#menu-option-button{
+    vertical-align: middle;
 }

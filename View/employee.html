@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../Css/Common.css">
     <link rel="stylesheet" href="../Css/Employee.css">
     <link rel="stylesheet" href="../Css/Spacing.css ">
+    <link rel="stylesheet" href="../Css/icon.css ">
 </head>
 
 <body>
@@ -27,35 +28,36 @@
                             <button id="add-new-employee-button" onclick="addNewOnClick()">Thêm mới nhân viên</button>
                         </div>
                     </div>
-                    <div class="ml-16 mr-16" id="table-contaniner">
+                    <div class="ml-24 mr-24" id="table-contaniner">
                         <div id="action-button-container">
-                            <div class="input-container">
+                            <div class="input-container inline-block">
                                 <span>
                                     <input type="text" id="search-box" placeholder="Tìm theo mã, tên nhân viên">
-                                    <div id="search-icon" class="company-icon" style="color:blue"></div>
+                                    <div id="search-icon" class="search-icon"></div>
                                 </span>
                             </div>
-                            <div id="refresh-button-container">
-                                <i class="refresh-icon"></i>
+                            <div id="refresh-button-container" class="inline-block ml-8">
+                                <div id="refresh-icon" class="refresh-icon"></div>
                             </div>
                         </div>
                         <div id="body-main">
                             <table id="employee-table">
-                                <tr id="table-header">
-                                    <th id="column-checkbox-header"><input type="checkbox"></th>
-                                    <th id="employee-code-header">MÃ NHÂN VIÊN</th>
-                                    <th id="employee-name-header">TÊN NHÂN VIÊN</th>
-                                    <th id="employee-gender-header">GIỚI TÍNH</th>
-                                    <th id="employee-birthdate-header">NGÀY SINH</th>
-                                    <th id="employee-social-id-header">SỐ CMND</th>
-                                    <th id="employee-title-header">CHỨC DANH</th>
-                                    <th id="employee-unit-header">TÊN ĐƠN VỊ</th>
-                                    <th id="employee-bank-numder-header">SỐ TÀI KHOẢN</th>
-                                    <th id="employee-bank-name-header">TÊN NGÂN HÀNG</th>
-                                    <th id="employee-bank-branch-header">CHI NHÁNH TK NGÂN HÀNG</th>
-                                    <th id="employee-option-header">CHỨC NĂNG</th>
-                                </tr>
-    
+                                <div id="table-header-container">
+                                    <tr id="table-header">
+                                        <th id="column-checkbox-header"><input type="checkbox"></th>
+                                        <th id="employee-code-header" title="Mã nhân viên">MÃ NHÂN VIÊN</th>
+                                        <th id="employee-name-header" title="Tên nhân viên">TÊN NHÂN VIÊN</th>
+                                        <th id="employee-gender-header" title="Giới tính">GIỚI TÍNH</th>
+                                        <th id="employee-birthdate-header" title="Ngày sinh">NGÀY SINH</th>
+                                        <th id="employee-social-id-header" title="Số chứng minh nhân dân">SỐ CMND</th>
+                                        <th id="employee-title-header" title="Chức danh">CHỨC DANH</th>
+                                        <th id="employee-unit-header" title="Tên đơn vị">TÊN ĐƠN VỊ</th>
+                                        <th id="employee-bank-numder-header" title="Số tài khoản">SỐ TÀI KHOẢN</th>
+                                        <th id="employee-bank-name-header" title="Tên ngân hàng">TÊN NGÂN HÀNG</th>
+                                        <th id="employee-bank-branch-header" title="Chi nhánh tài khoản ngân hàng">CHI NHÁNH TK NGÂN HÀNG</th>
+                                        <th id="employee-option-header" title="Chức năng">CHỨC NĂNG</th>
+                                    </tr>
+                                </div>
                             </table>
                         </div>
                     </div>

@@ -32,7 +32,9 @@ body{
 }
 
 #action-button-container{
-    display: inline-block;
+    margin-top: 24px;
+    float: right;
+    margin-bottom: 12px;
 }
 
 #button-container{
@@ -45,23 +47,22 @@ body{
     background-color: #2DA01E;
     border: none;
     border-radius: 5px;
-    height: 32px;
     font-weight:bold;
     color: white;
-    padding-left: 8px;
-    padding-right: 8px;
-    font-size: 11px;
+    font-size: 14px;
+    padding: 12px 24px 12px 24px;
 }
 
 .input-container{
     border: solid 1px black;
     vertical-align: center;
-    height: 36px !important;
+    height: 28px;
 }
 
 #search-box{
-    height: 36px !important;
+    height: 28px;
     padding: 0;
+    padding-left: 8px;
     border: none;
     overflow: auto;
     outline: none;
@@ -81,13 +82,13 @@ body{
     margin: auto;
     border-collapse: collapse;
     border-spacing: 0px;
-    height: 24px !important;
+    height: 18px !important;
 }
 
 #employee-table tr{
     border: solid 1px #E0E0E0;
-    font-size: 8px;
-    height: 24px;
+    font-size: 14px;
+    height: 18px;
     border-collapse: collapse;
 }
 
@@ -95,15 +96,17 @@ body{
     border: solid 1px #E0E0E0;
     padding-left: 12px;
     padding-right: 12px;
-    font-size: 8px;
-    height: 24px;
+    font-size: 14px;
+    height: 18px;
     border-collapse: collapse;
+    position: sticky;
 }
 
 #employee-table #table-header{
     width: 100%;
     background-color: #EDEEF1;
     border: black solid 1px;
+    position: sticky;
 }
 
 #employee-table #column-checkbox-header{
@@ -315,4 +318,11 @@ body{
 
 #table-contaniner{
     background-color: white;
+}
+
+#body-main{
+    overflow: scroll;
+    height: 900px;
+    overflow-x: hidden;
+    width: 100%;
 }
