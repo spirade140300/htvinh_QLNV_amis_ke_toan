@@ -1,146 +1,157 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <script src="../Library/jquery-3.6.1.js"></script>
     <script src="../Library/jquery-3.6.1.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js" integrity="sha256-6XMVI0zB8cRzfZjqKcD01PBsAy3FlDASrlC8SxCpInY=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"
+        integrity="sha256-6XMVI0zB8cRzfZjqKcD01PBsAy3FlDASrlC8SxCpInY=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../Css/Common.css">
     <link rel="stylesheet" href="../Css/Employee.css">
     <link rel="stylesheet" href="../Css/Spacing.css ">
 </head>
 
-    <body>
-        <div id="header"></div>
-        <div id="sidemenu"></div>
-        <div id="content">
-            <div id="body-header">
-                <div id="title-container">
-                    <h1>Nhân viên</h1>
-                </div>
-                <div id="button-container">
-                    <button id="add-new-employee-button" onclick="addNewOnClick()">Thêm mới nhân viên</button>
-                </div>
-            </div>
-            <div>
-                <div id="action-button-container">
-                    <div id="input-container">
-                        <span>
-                            <input type="text" id="search-box" placeholder="Tìm theo mã, tên nhân viên">
-                            <div id="search-icon" class="company-icon" style="color:blue"></div>
-                        </span>
+<body>
+    <div>
+        <div class="inline-block" id="side-menu-container">
+            <div id="sidemenu"></div>
+        </div><div class="inline-block content-container">
+            <div class="header-container">
+                <div id="header"></div>
+                <div id="content">
+                    <div id="body-header">
+                        <div id="title-container">
+                            <h1 class="ml-16">Nhân viên</h1>
+                        </div>
+                        <div id="button-container">
+                            <button id="add-new-employee-button" onclick="addNewOnClick()">Thêm mới nhân viên</button>
+                        </div>
                     </div>
-                    <div id="refresh-button-container">
-                        <i class="refresh-icon"></i>
-                    </div>
-                </div>
-                <div id="body-main">
-                    <table id="employee-table">
-                        <tr id="table-header">
-                            <th id="column-checkbox-header"><input type="checkbox"></th>
-                            <th id="employee-code-header">MÃ NHÂN VIÊN</th>
-                            <th id="employee-name-header">TÊN NHÂN VIÊN</th>
-                            <th id="employee-gender-header">GIỚI TÍNH</th>
-                            <th id="employee-birthdate-header">NGÀY SINH</th>
-                            <th id="employee-social-id-header">SỐ CMND</th>
-                            <th id="employee-title-header">CHỨC DANH</th>
-                            <th id="employee-unit-header">TÊN ĐƠN VỊ</th>
-                            <th id="employee-bank-numder-header">SỐ TÀI KHOẢN</th>
-                            <th id="employee-bank-name-header">TÊN NGÂN HÀNG</th>
-                            <th id="employee-bank-branch-header">CHI NHÁNH TK NGÂN HÀNG</th>
-                            <th id="employee-option-header">CHỨC NĂNG</th>
-                        </tr>
-                        
-                    </table>
-                </div>
-            </div>
-            <div id="detail-dialog">
-                <div>
-                    <div id="dialog-detail-header">
-                        <p>Thông tin nhân viên </p>
-                    </div>
-                    
-                    <div id="is-customer" class="ml-8">
-                        <input type="checkbox">  Là khách hàng
-                    </div>
-                    <div id="is-provider" class="ml-8">
-                        <input type="checkbox" >Là nhà cung cấp
-                    </div>
-                    <div class="icon-help">
-                        
-                    </div>
-                    <div class="icon-close">
-
-                    </div>
-                </div>
-                <div id="dialog-body">
-                    <div id="dialog-body-upper">
-                        <div id="dialog-body-upper-left">
-                            <div class="row">
-                                <div id="dialog-employee-code">
-                                    <label>Mã <span class="error">*</span></label><br/>
-                                    <input class="text-box" type="text">
-                                </div>
-                                <div id="dialog-employee-name" class="ml-8">
-                                    <label>Tên <span class="error">*</span></label><br/>
-                                    <input class="text-box" type="text">
-                                </div>
+                    <div class="ml-16 mr-16" id="table-contaniner">
+                        <div id="action-button-container">
+                            <div class="input-container">
+                                <span>
+                                    <input type="text" id="search-box" placeholder="Tìm theo mã, tên nhân viên">
+                                    <div id="search-icon" class="company-icon" style="color:blue"></div>
+                                </span>
                             </div>
-                            <div class="row">
-                                <div id="dialog-employee-department">
-                                    <label>Đơn vị <span class="error">*</span></label><br/>
-                                    <select class="selector" id="department-select"></select>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div id="dialog-employee-title">
-                                    <label>Chức danh</label><br/>
-                                    <input class="text-box" id="textbox-title" type="text">
-                                </div>
+                            <div id="refresh-button-container">
+                                <i class="refresh-icon"></i>
                             </div>
                         </div>
-                        <diV id="dialog-body-upper-right" class="ml-32">
-                            <div class="row">
-                                <div id="dialog-employee-birthdate" class="inline-block">
-                                    <label>Ngày sinh</label><br/>
-                                    <select class="selector" id="birthdate-select"></select>
-                                </div>
-                                <div id="dialog-employee-department" class="inline-block">
-                                    <label class="">Giới tính</label><br/>
-                                    <input class="inline-block" type="radio">Nam
-                                    <input class="inline-block" type="radio">Nữ
-                                    <input class="inline-block" type="radio">Khác
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div id="dialog-employee-social-id" class="inline-block">
-                                    <label>Số CMND</label><br/>
-                                    <input class="text-box " type="text">
-                                </div>
-                                <div class="inline-block">
-                                    <label>Ngày cấp</label><br/>
-                                    <input class="text-box" type="text">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div id="dialog-employee-title">
-                                    <label>Nơi cấp</label><br/>
-                                    <input class="text-box" type="text">
-                                </div>
-                            </div>
-                        </diV>
-                        
+                        <div id="body-main">
+                            <table id="employee-table">
+                                <tr id="table-header">
+                                    <th id="column-checkbox-header"><input type="checkbox"></th>
+                                    <th id="employee-code-header">MÃ NHÂN VIÊN</th>
+                                    <th id="employee-name-header">TÊN NHÂN VIÊN</th>
+                                    <th id="employee-gender-header">GIỚI TÍNH</th>
+                                    <th id="employee-birthdate-header">NGÀY SINH</th>
+                                    <th id="employee-social-id-header">SỐ CMND</th>
+                                    <th id="employee-title-header">CHỨC DANH</th>
+                                    <th id="employee-unit-header">TÊN ĐƠN VỊ</th>
+                                    <th id="employee-bank-numder-header">SỐ TÀI KHOẢN</th>
+                                    <th id="employee-bank-name-header">TÊN NGÂN HÀNG</th>
+                                    <th id="employee-bank-branch-header">CHI NHÁNH TK NGÂN HÀNG</th>
+                                    <th id="employee-option-header">CHỨC NĂNG</th>
+                                </tr>
+    
+                            </table>
+                        </div>
                     </div>
-                    <div id="dialog-budy-under">
-
+                    <div id="detail-dialog">
+                        <div>
+                            <div id="dialog-detail-header">
+                                <p>Thông tin nhân viên </p>
+                            </div>
+    
+                            <div id="is-customer" class="ml-8">
+                                <input type="checkbox"> Là khách hàng
+                            </div>
+                            <div id="is-provider" class="ml-8">
+                                <input type="checkbox">Là nhà cung cấp
+                            </div>
+                            <div class="icon-help">
+    
+                            </div>
+                            <div class="icon-close">
+    
+                            </div>
+                        </div>
+                        <div id="dialog-body">
+                            <div id="dialog-body-upper">
+                                <div id="dialog-body-upper-left">
+                                    <div class="row">
+                                        <div id="dialog-employee-code">
+                                            <label>Mã <span class="error">*</span></label><br />
+                                            <input class="text-box" type="text">
+                                        </div>
+                                        <div id="dialog-employee-name" class="ml-8">
+                                            <label>Tên <span class="error">*</span></label><br />
+                                            <input class="text-box" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div id="dialog-employee-department">
+                                            <label>Đơn vị <span class="error">*</span></label><br />
+                                            <select class="selector" id="department-select"></select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div id="dialog-employee-title">
+                                            <label>Chức danh</label><br />
+                                            <input class="text-box" id="textbox-title" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                                <diV id="dialog-body-upper-right" class="ml-32">
+                                    <div class="row">
+                                        <div id="dialog-employee-birthdate" class="inline-block">
+                                            <label>Ngày sinh</label><br />
+                                            <select class="selector" id="birthdate-select"></select>
+                                        </div>
+                                        <div id="dialog-employee-department" class="inline-block">
+                                            <label class="">Giới tính</label><br />
+                                            <input class="inline-block" type="radio">Nam
+                                            <input class="inline-block" type="radio">Nữ
+                                            <input class="inline-block" type="radio">Khác
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div id="dialog-employee-social-id" class="inline-block">
+                                            <label>Số CMND</label><br />
+                                            <input class="text-box " type="text">
+                                        </div>
+                                        <div class="inline-block">
+                                            <label>Ngày cấp</label><br />
+                                            <input class="text-box" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div id="dialog-employee-title">
+                                            <label>Nơi cấp</label><br />
+                                            <input class="text-box" type="text">
+                                        </div>
+                                    </div>
+                                </diV>
+    
+                            </div>
+                            <div id="dialog-budy-under">
+    
+                            </div>
+                        </div>
+                        <div id="dialog-footer">
+    
+                        </div>
                     </div>
-                </div>
-                <div id="dialog-footer">
-
                 </div>
             </div>
+            
         </div>
+
         <div id="footer"></div>
         <script lang="javascript" src="../Script/employee.js"></script>
-    </body>
+    </div>
+</body>
 
 </html>
