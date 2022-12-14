@@ -207,3 +207,19 @@
     background-position-y: -894px;
     border-radius: 50%;
 }
+
+.help-icon{
+    width: 24px;
+    height: 24px;
+    background-image: url(../Resource/img/Sprites.64af8f61.svg);
+    background-position-x: -88px;
+    background-position-y: -144px;
+}
+
+.close-icon{
+    width: 24px;
+    height: 24px;
+    background-image: url(../Resource/img/Sprites.64af8f61.svg);
+    background-position-x: -144px;
+    background-position-y: -144px;
+}

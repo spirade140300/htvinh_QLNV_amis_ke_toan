@@ -32,7 +32,7 @@
                         <div id="action-button-container">
                             <div class="input-container inline-block">
                                 <span>
-                                    <input type="text" id="search-box" placeholder="Tìm theo mã, tên nhân viên">
+                                    <input type="text" id="search-box" class="text-box" placeholder="Tìm theo mã, tên nhân viên">
                                     <div id="search-icon" class="search-icon"></div>
                                 </span>
                             </div>
@@ -61,8 +61,8 @@
                             </table>
                         </div>
                     </div>
-                    <div id="detail-dialog">
-                        <div>
+                    <div id="detail-dialog" style="display: none">
+                        <div class="inline-block">
                             <div id="dialog-detail-header">
                                 <p>Thông tin nhân viên </p>
                             </div>
@@ -73,11 +73,13 @@
                             <div id="is-provider" class="ml-8">
                                 <input type="checkbox">Là nhà cung cấp
                             </div>
-                            <div class="icon-help">
-    
+                        </div>
+                        <div id="icon-container" class="inline-block">
+                            <div class="icon-help inline-block">
+                                <div id="refresh-icon" class="help-icon"></div>
                             </div>
-                            <div class="icon-close">
-    
+                            <div class="icon-close inline-block">
+                                <div id="refresh-icon" class="close-icon"></div>
                             </div>
                         </div>
                         <div id="dialog-body">
@@ -85,7 +87,9 @@
                                 <div id="dialog-body-upper-left">
                                     <div class="row">
                                         <div id="dialog-employee-code">
-                                            <label>Mã <span class="error">*</span></label><br />
+                                            <label>Mã 
+                                                <span class="error">*</span>
+                                            </label><br />
                                             <input class="text-box" type="text">
                                         </div>
                                         <div id="dialog-employee-name" class="ml-8">
@@ -112,7 +116,7 @@
                                             <label>Ngày sinh</label><br />
                                             <select class="selector" id="birthdate-select"></select>
                                         </div>
-                                        <div id="dialog-employee-department" class="inline-block">
+                                        <div id="dialog-employee-gender" class="inline-block">
                                             <label class="">Giới tính</label><br />
                                             <input class="inline-block" type="radio">Nam
                                             <input class="inline-block" type="radio">Nữ
@@ -124,13 +128,13 @@
                                             <label>Số CMND</label><br />
                                             <input class="text-box " type="text">
                                         </div>
-                                        <div class="inline-block">
+                                        <div id="dialog-employee-date" class="inline-block">
                                             <label>Ngày cấp</label><br />
                                             <input class="text-box" type="text">
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div id="dialog-employee-title">
+                                        <div id="dialog-employee-place">
                                             <label>Nơi cấp</label><br />
                                             <input class="text-box" type="text">
                                         </div>
@@ -139,11 +143,48 @@
     
                             </div>
                             <div id="dialog-budy-under">
-    
+                                <div class="inline-block">
+                                    <label>Địa chỉ</label><br />
+                                    <input class="text-box" type="text">
+                                </div><br/>
+                                <div class="inline-block">
+                                    <div class="inline-block">
+                                        <label>ĐT di động</label><br />
+                                        <input class="text-box" type="text">
+                                    </div>
+                                    <div class="inline-block">
+                                        <label>ĐT cố định</label><br />
+                                        <input class="text-box" type="text">
+                                    </div>
+                                    <div class="inline-block">
+                                        <label>Email</label><br />
+                                        <input class="text-box" type="text">
+                                    </div>
+                                </div><br/>
+                                <div class="inline-block">
+                                    <div class="inline-block">
+                                        <label>Tài khoản ngân hàng</label><br />
+                                        <input class="text-box" type="text">
+                                    </div>
+                                    <div class="inline-block">
+                                        <label>Tên ngân hàng</label><br />
+                                        <input class="text-box" type="text">
+                                    </div>
+                                    <div class="inline-block">
+                                        <label>Chi nhánh</label><br />
+                                        <input class="text-box" type="text">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div id="dialog-footer">
-    
+                            <div>
+                                <button></button>
+                            </div>
+                            <div>
+                                <button></button>
+                                <button></button>
+                            </div>
                         </div>
                     </div>
                 </div>

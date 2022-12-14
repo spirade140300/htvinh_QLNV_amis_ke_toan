@@ -2,21 +2,9 @@ $("#header").load("../Common/header.html");
 $("#footer").load("../Common/footer.html"); 
 $("#sidemenu").load("../Common/sidemenu.html"); 
 
-$(function(){
-    $( "#detail-dialog" ).dialog({
-        autoOpen: false,
-        width: 1024,
-        height: 720,
-        maxwidth: 800
-      });
-
-    this.addNewOnClick = function(){
-        $("#detail-dialog").dialog(
-            'open'
-            );
-    }
-
-})
+this.addNewOnClick = function(){
+    $("#detail-dialog").removeAttr("style");
+}
 
 this.CallAPIToGetData = function(){
     $.ajax({

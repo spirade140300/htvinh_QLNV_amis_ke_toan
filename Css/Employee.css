@@ -241,6 +241,10 @@ body{
 
 #detail-dialog{
     padding: 24px;
+    position: absolute;
+    width: auto;
+    top: 100px;
+    right: 400px;
 }
 
 #detail-dialog #is-customer{
@@ -253,6 +257,8 @@ body{
 
 #detail-dialog #dialog-detail-header{
     display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 #detail-dialog{
@@ -261,6 +267,7 @@ body{
 
 #dialog-employee-code{
     display: inline-block;
+    width: 40%;
 }
 
 #dialog-employee-name{
@@ -279,37 +286,28 @@ body{
 
 #dialog-body-upper-right{
     display: inline-block;
+    width: 47%;
 }
 
 #dialog-body-upper-left{
     display: inline-block;
+    width: 47%;
 }
 
 #dialog-employee-department{
     display: inline-block;
-    width: 366px;
-}
-
-#dialog-employee-department select{
-    width: 366px;
-}
-
-#dialog-employee-code input{
-    border-color: solid 1px green;
-}
-
-#dialog-detail-header p{
-    font-size: 20px;
-    font-weight: bold;
+    width: 100%;
 }
 
 #birthdate-select{
-    width: 200px;
+
 }
 
+#department-select{
+    width: 100%;
+}
 
 #dialog-employee-title input{
-    width: 358px;
 }
 
 .header-container{
@@ -325,4 +323,8 @@ body{
     height: 900px;
     overflow-x: hidden;
     width: 100%;
+}
+
+#icon-container{
+    float: right;
 }
