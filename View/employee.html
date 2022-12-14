@@ -32,8 +32,8 @@
                         <div id="action-button-container">
                             <div class="input-container inline-block">
                                 <span>
-                                    <input type="text" id="search-box" class="text-box" placeholder="Tìm theo mã, tên nhân viên">
-                                    <div id="search-icon" class="search-icon"></div>
+                                    <input type="text" id="search-box" class="text-box inline-block" placeholder="Tìm theo mã, tên nhân viên">
+                                    <div id="search-icon" class="search-icon "></div>
                                 </span>
                             </div>
                             <div id="refresh-button-container" class="inline-block ml-8">
@@ -60,6 +60,14 @@
                                 </div>
                             </table>
                         </div>
+                        <div id="table-footer">
+                            <div id="">
+                                Tổng số:<p>100</p> bản ghi
+                            </div>
+                            <div>
+
+                            </div>
+                        </div>
                     </div>
                     <div id="detail-dialog" style="display: none">
                         <div class="inline-block">
@@ -68,18 +76,18 @@
                             </div>
     
                             <div id="is-customer" class="ml-8">
-                                <input type="checkbox"> Là khách hàng
+                                <input type="checkbox" class="check-box">Là khách hàng
                             </div>
                             <div id="is-provider" class="ml-8">
-                                <input type="checkbox">Là nhà cung cấp
+                                <input type="checkbox" class="check-box">Là nhà cung cấp
                             </div>
                         </div>
                         <div id="icon-container" class="inline-block">
                             <div class="icon-help inline-block">
-                                <div id="refresh-icon" class="help-icon"></div>
+                                <div id="help-icon" class="help-icon" onclick="detailHelpClick()"></div>
                             </div>
                             <div class="icon-close inline-block">
-                                <div id="refresh-icon" class="close-icon"></div>
+                                <div id="close-icon" class="close-icon" onclick="closeIconClick()"></div>
                             </div>
                         </div>
                         <div id="dialog-body">
@@ -90,23 +98,23 @@
                                             <label>Mã 
                                                 <span class="error">*</span>
                                             </label><br />
-                                            <input class="text-box" type="text">
+                                            <input class="text-box" type="text" id="detail-code-input" tabindex="1">
                                         </div>
                                         <div id="dialog-employee-name" class="ml-8">
                                             <label>Tên <span class="error">*</span></label><br />
-                                            <input class="text-box" type="text">
+                                            <input class="text-box" type="text" tabindex="2">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div id="dialog-employee-department">
                                             <label>Đơn vị <span class="error">*</span></label><br />
-                                            <select class="selector" id="department-select"></select>
+                                            <select class="selector" id="department-select" tabindex="3"></select>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div id="dialog-employee-title">
                                             <label>Chức danh</label><br />
-                                            <input class="text-box" id="textbox-title" type="text">
+                                            <input class="text-box" id="textbox-title" type="text" tabindex="4">
                                         </div>
                                     </div>
                                 </div>
@@ -114,76 +122,79 @@
                                     <div class="row">
                                         <div id="dialog-employee-birthdate" class="inline-block">
                                             <label>Ngày sinh</label><br />
-                                            <select class="selector" id="birthdate-select"></select>
+                                            <input class="text-box" type="date" id="birthdate-select" tabindex="5"></input>
                                         </div>
                                         <div id="dialog-employee-gender" class="inline-block">
                                             <label class="">Giới tính</label><br />
-                                            <input class="inline-block" type="radio">Nam
-                                            <input class="inline-block" type="radio">Nữ
-                                            <input class="inline-block" type="radio">Khác
+                                            <div class="mt-8">
+                                                <input class="inline-block" type="radio" name="gender" checked tabindex="6">Nam
+                                                <input class="inline-block" type="radio" name="gender">Nữ
+                                                <input class="inline-block" type="radio" name="gender">Khác
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div id="dialog-employee-social-id" class="inline-block">
                                             <label>Số CMND</label><br />
-                                            <input class="text-box " type="text">
+                                            <input class="text-box" type="text" id="social-id-number" tabindex="7">
                                         </div>
                                         <div id="dialog-employee-date" class="inline-block">
                                             <label>Ngày cấp</label><br />
-                                            <input class="text-box" type="text">
+                                            <input class="text-box" type="date" id="provided-date" tabindex="8"></input>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div id="dialog-employee-place">
                                             <label>Nơi cấp</label><br />
-                                            <input class="text-box" type="text">
+                                            <input class="text-box" type="text" tabindex="9">
                                         </div>
                                     </div>
                                 </diV>
     
                             </div>
                             <div id="dialog-budy-under">
-                                <div class="inline-block">
-                                    <label>Địa chỉ</label><br />
-                                    <input class="text-box" type="text">
-                                </div><br/>
-                                <div class="inline-block">
-                                    <div class="inline-block">
-                                        <label>ĐT di động</label><br />
-                                        <input class="text-box" type="text">
+                                <div class="row wp-100">
+                                    <label>Địa chỉ</label>
+                                    <input class="text-box" type="text" id="address-input" tabindex="10">
+                                </div>
+                                <div class="row">
+                                    <div class="inline-block wp-25 mr-8">
+                                        <label>ĐT di động</label>
+                                        <input class="text-box" type="text" tabindex="11">
                                     </div>
-                                    <div class="inline-block">
-                                        <label>ĐT cố định</label><br />
-                                        <input class="text-box" type="text">
+                                    <div class="inline-block wp-25 mr-8">
+                                        <label>ĐT cố định</label>
+                                        <input class="text-box" type="text" tabindex="12">
                                     </div>
-                                    <div class="inline-block">
-                                        <label>Email</label><br />
-                                        <input class="text-box" type="text">
+                                    <div class="inline-block wp-25 mr-8">
+                                        <label>Email</label>
+                                        <input class="text-box" type="text" tabindex="13">
                                     </div>
-                                </div><br/>
-                                <div class="inline-block">
-                                    <div class="inline-block">
-                                        <label>Tài khoản ngân hàng</label><br />
-                                        <input class="text-box" type="text">
+                                </div>
+                                <div class="row">
+                                    <div class="inline-block wp-25 mr-8">
+                                        <label>Tài khoản ngân hàng</label>
+                                        <input class="text-box" type="text" tabindex="14">
                                     </div>
-                                    <div class="inline-block">
-                                        <label>Tên ngân hàng</label><br />
-                                        <input class="text-box" type="text">
+                                    <div class="inline-block wp-25 mr-8">
+                                        <label>Tên ngân hàng</label>
+                                        <input class="text-box" type="text" tabindex="15">
                                     </div>
-                                    <div class="inline-block">
-                                        <label>Chi nhánh</label><br />
-                                        <input class="text-box" type="text">
+                                    <div class="inline-block wp-25 mr-8">
+                                        <label>Chi nhánh</label>
+                                        <input class="text-box" type="text" tabindex="16">
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div id="dialog-footer">
-                            <div>
-                                <button></button>
+                            <hr class="mt-48 mb-24"/>
+                            <div class="inline-block">
+                                <button class="btn btn-normal" tabindex="17">Hủy</button>
                             </div>
-                            <div>
-                                <button></button>
-                                <button></button>
+                            <div class="inline-block flr">
+                                <button class="btn btn-normal" tabindex="18">Cất</button>
+                                <button class="btn btn-green" tabindex="19">Cất và Thêm</button>
                             </div>
                         </div>
                     </div>
@@ -192,7 +203,7 @@
             
         </div>
 
-        <div id="footer"></div>
+        <div id="1footer"></div>
         <script lang="javascript" src="../Script/employee.js"></script>
     </div>
 </body>

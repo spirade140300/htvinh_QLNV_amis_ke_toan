@@ -4,6 +4,17 @@ $("#sidemenu").load("../Common/sidemenu.html");
 
 this.addNewOnClick = function(){
     $("#detail-dialog").removeAttr("style");
+    $("#detail-code-input").focus();
+}
+
+
+
+this.detailHelpClick = function(){
+
+}
+
+this.closeIconClick = function(){
+    $("#detail-dialog").attr("style", "display:none");
 }
 
 this.CallAPIToGetData = function(){
@@ -44,18 +55,18 @@ this.LoadDataToGrid = function(data){
                             </select>`;
         let newRow = 
         `<tr id="table-row-${i}">
-        <th id="column-checkbox"><input type="checkbox"></th>
-        <th id="employee-code">${employeeCode}</th>
-        <th id="employee-name">${employeeName}</th>
-        <th id="employee-gender">${employeeGender}</th>
-        <th id="employee-birthdate">${employeeBirthDate}</th>
-        <th id="employee-social-id">${employeeSocialId}</th>
-        <th id="employee-title">${employeeTitle}</th>
-        <th id="employee-unit">${employeeUnit}</th>
-        <th id="employee-bank-numder">${employeeBankNumber}</th>
-        <th id="employee-bank-name">${employeeBankName}</th>
-        <th id="employee-bank-branch">${employeeBankBranch}</th>
-        <th id="employee-option">${employeeOption}</th>
+        <td id="column-checkbox"><input type="checkbox"></td>
+        <td id="employee-code">${employeeCode}</td>
+        <td id="employee-name">${employeeName}</td>
+        <td id="employee-gender">${employeeGender}</td>
+        <td id="employee-birthdate">${employeeBirthDate}</td>
+        <td id="employee-social-id">${employeeSocialId}</td>
+        <td id="employee-title">${employeeTitle}</td>
+        <td id="employee-unit">${employeeUnit}</td>
+        <td id="employee-bank-numder">${employeeBankNumber}</td>
+        <td id="employee-bank-name">${employeeBankName}</td>
+        <td id="employee-bank-branch">${employeeBankBranch}</td>
+        <td id="employee-option">${employeeOption}</td>
         </tr>`;
 
         $('#employee-table').append(newRow);

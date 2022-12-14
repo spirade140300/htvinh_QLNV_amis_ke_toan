@@ -20,6 +20,12 @@ body{
     height: 56px;
 }
 
+#table-footer{
+    height: 56px;
+    background-color: red;
+    width: calc(100% - 16px);
+}
+
 #content{
     width: 100%;
     display: inline-block;
@@ -41,32 +47,23 @@ body{
     display: inline-block;
     float: right;
     vertical-align: middle;
+    margin-top: 20px;
 }
 
-#add-new-employee-button{
-    background-color: #2DA01E;
-    border: none;
-    border-radius: 5px;
-    font-weight:bold;
-    color: white;
-    font-size: 14px;
-    padding: 12px 24px 12px 24px;
-}
+
 
 .input-container{
     border: solid 1px black;
     vertical-align: center;
-    height: 28px;
+    height: 36px;
 }
 
 #search-box{
-    height: 28px;
-    padding: 0;
-    padding-left: 8px;
+    padding: 4px;
     border: none;
     overflow: auto;
     outline: none;
-
+    width: calc(100% - 40px);
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
@@ -75,21 +72,18 @@ body{
 #search-icon{
     float: right;
     margin-left: 8px;
+    margin-top: 4px;
 }
 
 #employee-table{
-    width: calc(100% - 32px);
     margin: auto;
-    border-collapse: collapse;
     border-spacing: 0px;
-    height: 18px !important;
 }
 
 #employee-table tr{
     border: solid 1px #E0E0E0;
     font-size: 14px;
     height: 18px;
-    border-collapse: collapse;
 }
 
 #employee-table th{
@@ -98,7 +92,15 @@ body{
     padding-right: 12px;
     font-size: 14px;
     height: 18px;
-    border-collapse: collapse;
+    position: sticky;
+}
+
+#employee-table td{
+    border: solid 1px #E0E0E0;
+    padding-left: 12px;
+    padding-right: 12px;
+    font-size: 14px;
+    height: 18px;
     position: sticky;
 }
 
@@ -111,132 +113,150 @@ body{
 
 #employee-table #column-checkbox-header{
     text-align: center;
-    width: 3.5%;
+    width: 50px;
     vertical-align: middle;
-    font-weight: bold;
+    font-weight: 500;
 }
 
 #employee-table #employee-code-header{
     text-align: left;
-    width: 6.5%;
+    width: 100px;
     vertical-align: middle;
-    font-weight: bold;
+    font-weight: 500;
 }
 
 #employee-table #employee-name-header{
     text-align: left;
-    width: 10%;
-    background-color: EDEEF1;
+    width: 100px;
+    font-weight: 500;
 }
 
 #employee-table #employee-gender-header{
     text-align: left;
-    width: 7%;
+    width: 100px;
+    font-weight: 500;
 }
 
 #employee-table #employee-birthdate-header{
     text-align: center;
-    width: 7%;
+    width: 100px;
+    font-weight: 500;
 }
 
 #employee-table #employee-social-id-header{
     text-align: left;
-    width: 10%;
+    width: 100px;
+    font-weight: 500;
 }
 
 #employee-table #employee-title-header{
     text-align: left;
-    width: 11%;
+    width: 50px;
+    font-weight: 500;
 }
 
 #employee-table #employee-unit-header{
     text-align: left;
-    width: 12%;
+    width: 100px;
+    font-weight: 500;
 }
 
 #employee-table #employee-bank-numder-header{
     text-align: left;
-    width: 7%;
+    width: 150px;
+    font-weight: 500;
 }
 
 #employee-table #employee-bank-name-header{
     text-align: left;
-    width: 10%;
+    width: 100px;
+    font-weight: 500;
 }
 
 #employee-table #employee-bank-branch-header{
     text-align: left;
-    width: 10%;
+    width: 200px;
+    font-weight: 500;
 }
 
 #employee-table #employee-option-header{
     text-align: center;
-    width: 7%;
+    width: 100px;
+    font-weight: 500;
 }
 
 #employee-table #column-checkbox{
     text-align: center;
-    width: 3.5%;
+    width: 100px;
     vertical-align: middle;
-    font-weight: bold;
+    font-weight: 500;
 }
 
 #employee-table #employee-code{
     text-align: left;
-    width: 6.5%;
+    width: 100px;
     vertical-align: middle;
-    font-weight: bold;
+    font-weight: 400;
 }
 
 #employee-table #employee-name{
     text-align: left;
     width: 10%;
-    background-color: EDEEF1;
+    font-weight: 400;
 }
 
 #employee-table #employee-gender{
     text-align: left;
     width: 7%;
+    font-weight: 400;
 }
 
 #employee-table #employee-birthdate{
     text-align: center;
     width: 7%;
+    font-weight: 400;
 }
 
 #employee-table #employee-social-id{
     text-align: left;
     width: 10%;
+    font-weight: 400;
 }
 
 #employee-table #employee-title{
     text-align: left;
     width: 12%;
+    font-weight: 400;
 }
 
 #employee-table #employee-unit{
     text-align: left;
     width: 12%;
+    font-weight: 400;
 }
 
 #employee-table #employee-bank-numder{
     text-align: left;
     width: 7%;
+    font-weight: 400;
 }
 
 #employee-table #employee-bank-name{
     text-align: left;
     width: 10%;
+    font-weight: 400;
 }
 
 #employee-table #employee-bank-branch{
     text-align: left;
     width: 10%;
+    font-weight: 400;
 }
 
 #employee-table #employee-option{
     text-align: center;
     width: 7%;
+    font-weight: 400;
 }
 
 #detail-dialog{
@@ -257,8 +277,14 @@ body{
 
 #detail-dialog #dialog-detail-header{
     display: inline-block;
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 24px;
+    font-weight: 500;
+    height: 32px;
+}
+
+#dialog-detail-header p{
+    margin-top: 0px;
+    margin-bottom: 9px;
 }
 
 #detail-dialog{
@@ -272,12 +298,13 @@ body{
 
 #dialog-employee-name{
     display: inline-block;
+    width: calc(100% - 13px - 40%);
 }
 
 #detail-dialog{
     z-index: 100;
     background-color: white;
-    border: 1px solid black;
+    border: 1px solid #EBEBEB;;
 }
 
 .ui-dialog-titlebar-close {
@@ -286,12 +313,12 @@ body{
 
 #dialog-body-upper-right{
     display: inline-block;
-    width: 47%;
+    width: calc(50% - 20px);
 }
 
 #dialog-body-upper-left{
     display: inline-block;
-    width: 47%;
+    width: calc(50% - 20px);
 }
 
 #dialog-employee-department{
@@ -300,14 +327,11 @@ body{
 }
 
 #birthdate-select{
-
-}
-
-#department-select{
     width: 100%;
 }
 
-#dialog-employee-title input{
+#department-select{
+    width: 99.5%;
 }
 
 .header-container{
@@ -319,12 +343,55 @@ body{
 }
 
 #body-main{
+    height: 719px;
+    width: calc(100% - 32px);
     overflow: scroll;
-    height: 900px;
     overflow-x: hidden;
-    width: 100%;
+    padding-left: 16px;
 }
 
 #icon-container{
     float: right;
 }
+
+#detail-code-input{
+    padding-right: 7px;
+}
+
+#dialog-employee-birthdate{
+    width: 40%;
+}
+
+#dialog-employee-date{
+    width: 40%;
+}
+
+#dialog-employee-gender{
+    width: calc(100% - 43% - 8px);
+    height: 62px;
+    margin-left: 16px;
+}
+
+#dialog-employee-social-id{
+    width: calc(100% - 40% - 13px);
+    margin-right: 8px;
+}
+
+#social-id-number{
+    padding-right: 8px;
+}
+
+#dialog-body label{
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+#address-input{
+    width: 98.4%;
+}
+
+#provided-date{
+    padding-left: 3px;
+}
+
