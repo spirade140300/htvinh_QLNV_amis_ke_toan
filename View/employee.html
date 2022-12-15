@@ -4,12 +4,15 @@
 <head>
     <script src="../Library/jquery-3.6.1.js"></script>
     <script src="../Library/jquery-3.6.1.min.js"></script>
+    <script src="../Library/datatables.js"></script>
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"
         integrity="sha256-6XMVI0zB8cRzfZjqKcD01PBsAy3FlDASrlC8SxCpInY=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../Css/Common.css">
     <link rel="stylesheet" href="../Css/Employee.css">
     <link rel="stylesheet" href="../Css/Spacing.css ">
     <link rel="stylesheet" href="../Css/icon.css ">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
 </head>
 
 <body>
@@ -42,9 +45,8 @@
                         </div>
                         <div id="body-main">
                             <table id="employee-table">
-                                <div id="table-header-container">
-                                    <tr id="table-header">
-                                        <th id="column-checkbox-header"><input type="checkbox"></th>
+                                <thead>
+                                    <th id="column-checkbox-header"><input type="checkbox"></th>
                                         <th id="employee-code-header" title="Mã nhân viên">MÃ NHÂN VIÊN</th>
                                         <th id="employee-name-header" title="Tên nhân viên">TÊN NHÂN VIÊN</th>
                                         <th id="employee-gender-header" title="Giới tính">GIỚI TÍNH</th>
@@ -56,16 +58,33 @@
                                         <th id="employee-bank-name-header" title="Tên ngân hàng">TÊN NGÂN HÀNG</th>
                                         <th id="employee-bank-branch-header" title="Chi nhánh tài khoản ngân hàng">CHI NHÁNH TK NGÂN HÀNG</th>
                                         <th id="employee-option-header" title="Chức năng">CHỨC NĂNG</th>
-                                    </tr>
-                                </div>
+                                </thead>
+                                <tbody>
+                                    
+                                </tbody>
                             </table>
                         </div>
                         <div id="table-footer">
-                            <div id="">
-                                Tổng số:<p>100</p> bản ghi
+                            <div id="footer-lefty" class="inline-block">
+                                <p class="inline-block">Tổng số:</p>
+                                <p class="inline-block" id="total-record">100</p> 
+                                <p class="inline-block">bản ghi</p>
                             </div>
-                            <div>
-
+                            <div id="footer-righty" class="inline-block flr">
+                                <select class="selector inline-block" id="select-records-per-page">
+                                    <option value="10">10 bản ghi trên 1 trang</option>
+                                    <option value="20">20 bản ghi trên 1 trang</option>
+                                    <option value="30">30 bản ghi trên 1 trang</option>
+                                    <option value="50">50 bản ghi trên 1 trang</option>
+                                    <option value="100">100 bản ghi trên 1 trang</option>
+                                </select>
+                                <div class="pagination inline-block" id="pagination">
+                                    <a>Trước</a>
+                                    <a value="1" onclick="GetDataWithPaging()" class="active">1</a>
+                                    <a value="2" onclick="GetDataWithPaging()">2</a>
+                                    <a value="3" onclick="GetDataWithPaging()">3</a>
+                                    <a href="#">Sau</a>
+                                </div>
                             </div>
                         </div>
                     </div>

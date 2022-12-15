@@ -1,60 +1,98 @@
-$("#header").load("../Common/header.html"); 
-$("#footer").load("../Common/footer.html"); 
-$("#sidemenu").load("../Common/sidemenu.html"); 
+$("#header").load("../Common/header.html");
+$("#footer").load("../Common/footer.html");
+$("#sidemenu").load("../Common/sidemenu.html");
 
-this.addNewOnClick = function(){
+this.addNewOnClick = function () {
     $("#detail-dialog").removeAttr("style");
     $("#detail-code-input").focus();
 }
 
+this.$('select').on('change', function () {
+    GetDataWithPaging();
+});
 
-
-this.detailHelpClick = function(){
+this.detailHelpClick = function () {
 
 }
 
-this.closeIconClick = function(){
+this.closeIconClick = function () {
     $("#detail-dialog").attr("style", "display:none");
 }
 
-this.CallAPIToGetData = function(){
+this.CallAPIToGetData = function () {
     $.ajax({
         url: "https://amis.manhnv.net/api/v1/Employees",
         type: "GET",
-        success: function(result){
+        success: function (result) {
             LoadDataToGrid(result)
         },
-        done : function(result){
+        done: function (result) {
             console.log(result);
         }
     });
 }
 
-this.LoadDataToGrid = function(data){
-    if(!data){
+this.GetDataWithPaging = function () {
+    var pageSize = $('#select-records-per-page').find(":selected").val();
+    var pageNumber = $("#pagination a.active").attr("value");
+    $.ajax({
+        url: "https://amis.manhnv.net/api/v1/Employees/filter",
+        type: "GET",
+        data: {
+            pageSize: pageSize,
+            pageNumber: pageNumber
+        },
+        success: function (result) {
+            LoadDataToGrid(result)
+        },
+        done: function (result) {
+            console.log(result);
+        }
+    });
+}
+
+
+
+this.LoadDataToGrid = function (data) {
+    if (!data.Data) {
         return;
     }
+    if ($("#employee-table tr").length > 0) {
+        $("#employee-table").find("tr:gt(0)").remove();
+    }
+    var resultData = data.Data;
+    var totalPage = data.TotalPage;
+    if(totalPage > 0){
+        $("#pagination").empty();
+        $("#pagination").append(`<a>Trước</a>`);
+        $("#pagination").append(`<a value="1" onclick="GetDataWithPaging()" class="active">1</a>`);
+        for(let x = 1; x < totalPage; x++){
+            $("#pagination").append(`<a value="${x}" onclick="GetDataWithPaging()">${x}</a>`)
+        }
+        $("#pagination").append(`<a>Sau</a>`);
+    }
+    var totalRecord = data.TotalRecord;
+    var arrayLength = resultData.length;
 
-    var arrayLength = data.length;
     for (var i = 0; i < arrayLength; i++) {
-        let employeeCode = data[i]["EmployeeCode"] ? data[i]["EmployeeCode"] : "Không có";
-        let employeeName = data[i]["EmployeeName"] ? data[i]["EmployeeName"] : "Không có";
-        let employeeGender = data[i]["EmployeeGender"] ? data[i]["EmployeeGender"] : "Không có";
-        let employeeBirthDate = data[i]["EmployeeBirthDate"] ? data[i]["EmployeeBirthDate"] : "Không có";
-        let employeeSocialId = data[i]["EmployeeSocialId"] ? data[i]["EmployeeSocialId"] : "Không có";
-        let employeeTitle = data[i]["EmployeeTitle"] ? data[i]["EmployeeTitle"] : "Không có";
-        let employeeUnit = data[i]["EmployeeUnit"] ? data[i]["EmployeeUnit"] : "Không có";
-        let employeeBankNumber = data[i]["EmployeeBankNumber"] ? data[i]["EmployeeBankNumber"] : "Không có";
-        let employeeBankName = data[i]["EmployeeBankName"] ? data[i]["EmployeeBankName"] : "Không có";
-        let employeeBankBranch = data[i]["EmployeeBankBranch"] ? data[i]["EmployeeBankBranch"] : "Không có";
+        let employeeCode = resultData[i]["EmployeeCode"] ? resultData[i]["EmployeeCode"] : "Không có";
+        let employeeName = resultData[i]["EmployeeName"] ? resultData[i]["EmployeeName"] : "Không có";
+        let employeeGender = resultData[i]["EmployeeGender"] ? resultData[i]["EmployeeGender"] : "Không có";
+        let employeeBirthDate = resultData[i]["EmployeeBirthDate"] ? resultData[i]["EmployeeBirthDate"] : "Không có";
+        let employeeSocialId = resultData[i]["EmployeeSocialId"] ? resultData[i]["EmployeeSocialId"] : "Không có";
+        let employeeTitle = resultData[i]["EmployeeTitle"] ? resultData[i]["EmployeeTitle"] : "Không có";
+        let employeeUnit = resultData[i]["EmployeeUnit"] ? resultData[i]["EmployeeUnit"] : "Không có";
+        let employeeBankNumber = resultData[i]["EmployeeBankNumber"] ? resultData[i]["EmployeeBankNumber"] : "Không có";
+        let employeeBankName = resultData[i]["EmployeeBankName"] ? resultData[i]["EmployeeBankName"] : "Không có";
+        let employeeBankBranch = resultData[i]["EmployeeBankBranch"] ? resultData[i]["EmployeeBankBranch"] : "Không có";
         let employeeOption = `<p class="inline-block">sửa </p><select id="${employeeCode}" class="selector inline-block w-20">
                                 <option style="display: none"> </option>
                                 <option value="duplicate">Nhân bản</option>
                                 <option value="delete">Xóa</option>
                                 <option value="deactivate">Ngừng sử dụng</option>
                             </select>`;
-        let newRow = 
-        `<tr id="table-row-${i}">
+        let newRow =
+            `<tr id="table-row-${i}">
         <td id="column-checkbox"><input type="checkbox"></td>
         <td id="employee-code">${employeeCode}</td>
         <td id="employee-name">${employeeName}</td>
@@ -71,11 +109,15 @@ this.LoadDataToGrid = function(data){
 
         $('#employee-table').append(newRow);
     }
-    
 
+    $("#total-record").html(totalRecord);
+
+}
+
+this.initPaging = function(){
     
 }
 
-AppenDataToGrid = function(){}
+AppenDataToGrid = function () { }
 
-CallAPIToGetData();
+GetDataWithPaging();

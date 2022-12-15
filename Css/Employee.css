@@ -1,49 +1,49 @@
-#body-header{
+#body-header {
     display: inline-block;
     width: 100%;
 }
 
-body{
+body {
     overflow: hidden;
 }
 
-#sidemenu{
+#sidemenu {
     width: 200px;
     display: inline-block;
     vertical-align: top;
     height: 100%;
 }
 
-#header{
+#header {
     width: 100%;
     align-self: auto;
     height: 56px;
 }
 
-#table-footer{
+#table-footer {
     height: 56px;
-    background-color: red;
+    background-color: #F4F5F7;
     width: calc(100% - 16px);
 }
 
-#content{
+#content {
     width: 100%;
     display: inline-block;
     background-color: #F4F5F7;
 }
 
-#title-container{
+#title-container {
     display: inline-block;
     margin: 0px;
 }
 
-#action-button-container{
+#action-button-container {
     margin-top: 24px;
     float: right;
     margin-bottom: 12px;
 }
 
-#button-container{
+#button-container {
     display: inline-block;
     float: right;
     vertical-align: middle;
@@ -52,13 +52,13 @@ body{
 
 
 
-.input-container{
+.input-container {
     border: solid 1px black;
     vertical-align: center;
     height: 36px;
 }
 
-#search-box{
+#search-box {
     padding: 4px;
     border: none;
     overflow: auto;
@@ -69,33 +69,25 @@ body{
     box-shadow: none;
 }
 
-#search-icon{
+#search-icon {
     float: right;
     margin-left: 8px;
     margin-top: 4px;
 }
 
-#employee-table{
+#employee-table {
     margin: auto;
     border-spacing: 0px;
+    fixedHeader: true;
 }
 
-#employee-table tr{
+#employee-table tr {
     border: solid 1px #E0E0E0;
     font-size: 14px;
     height: 18px;
 }
 
-#employee-table th{
-    border: solid 1px #E0E0E0;
-    padding-left: 12px;
-    padding-right: 12px;
-    font-size: 14px;
-    height: 18px;
-    position: sticky;
-}
-
-#employee-table td{
+#employee-table th {
     border: solid 1px #E0E0E0;
     padding-left: 12px;
     padding-right: 12px;
@@ -104,162 +96,171 @@ body{
     position: sticky;
 }
 
-#employee-table #table-header{
+#employee-table td {
+    border: solid 1px #E0E0E0;
+    padding-left: 12px;
+    padding-right: 12px;
+    font-size: 14px;
+    height: 18px;
+    position: sticky;
+}
+
+#table-header {
     width: 100%;
     background-color: #EDEEF1;
     border: black solid 1px;
     position: sticky;
 }
 
-#employee-table #column-checkbox-header{
+#column-checkbox-header {
     text-align: center;
     width: 50px;
     vertical-align: middle;
     font-weight: 500;
 }
 
-#employee-table #employee-code-header{
+#employee-code-header {
     text-align: left;
     width: 100px;
     vertical-align: middle;
     font-weight: 500;
 }
 
-#employee-table #employee-name-header{
+#employee-name-header {
     text-align: left;
     width: 100px;
     font-weight: 500;
 }
 
-#employee-table #employee-gender-header{
+#employee-gender-header {
     text-align: left;
     width: 100px;
     font-weight: 500;
 }
 
-#employee-table #employee-birthdate-header{
+#employee-birthdate-header {
     text-align: center;
     width: 100px;
     font-weight: 500;
 }
 
-#employee-table #employee-social-id-header{
+#employee-social-id-header {
     text-align: left;
     width: 100px;
     font-weight: 500;
 }
 
-#employee-table #employee-title-header{
+ #employee-title-header {
     text-align: left;
     width: 50px;
     font-weight: 500;
 }
 
-#employee-table #employee-unit-header{
+ #employee-unit-header {
     text-align: left;
     width: 100px;
     font-weight: 500;
 }
 
-#employee-table #employee-bank-numder-header{
+ #employee-bank-numder-header {
     text-align: left;
     width: 150px;
     font-weight: 500;
 }
 
-#employee-table #employee-bank-name-header{
+ #employee-bank-name-header {
     text-align: left;
     width: 100px;
     font-weight: 500;
 }
 
-#employee-table #employee-bank-branch-header{
+ #employee-bank-branch-header {
     text-align: left;
     width: 200px;
     font-weight: 500;
 }
 
-#employee-table #employee-option-header{
+#employee-option-header {
     text-align: center;
     width: 100px;
     font-weight: 500;
 }
 
-#employee-table #column-checkbox{
+ #column-checkbox {
     text-align: center;
     width: 100px;
     vertical-align: middle;
     font-weight: 500;
 }
 
-#employee-table #employee-code{
+ #employee-code {
     text-align: left;
     width: 100px;
     vertical-align: middle;
     font-weight: 400;
 }
 
-#employee-table #employee-name{
+ #employee-name {
     text-align: left;
     width: 10%;
     font-weight: 400;
 }
 
-#employee-table #employee-gender{
+ #employee-gender {
     text-align: left;
     width: 7%;
     font-weight: 400;
 }
 
-#employee-table #employee-birthdate{
+#employee-birthdate {
     text-align: center;
     width: 7%;
     font-weight: 400;
 }
 
-#employee-table #employee-social-id{
+#employee-social-id {
     text-align: left;
     width: 10%;
     font-weight: 400;
 }
 
-#employee-table #employee-title{
+#employee-title {
     text-align: left;
     width: 12%;
     font-weight: 400;
 }
 
-#employee-table #employee-unit{
+#employee-unit {
     text-align: left;
     width: 12%;
     font-weight: 400;
 }
 
-#employee-table #employee-bank-numder{
+#employee-bank-numder {
     text-align: left;
     width: 7%;
     font-weight: 400;
 }
 
-#employee-table #employee-bank-name{
+#employee-bank-name {
     text-align: left;
     width: 10%;
     font-weight: 400;
 }
 
-#employee-table #employee-bank-branch{
+#employee-bank-branch {
     text-align: left;
     width: 10%;
     font-weight: 400;
 }
 
-#employee-table #employee-option{
+#employee-option {
     text-align: center;
     width: 7%;
     font-weight: 400;
 }
 
-#detail-dialog{
+#detail-dialog {
     padding: 24px;
     position: absolute;
     width: auto;
@@ -267,131 +268,165 @@ body{
     right: 400px;
 }
 
-#detail-dialog #is-customer{
+#detail-dialog #is-customer {
     display: inline-block;
 }
 
-#detail-dialog #is-provider{
+#detail-dialog #is-provider {
     display: inline-block;
 }
 
-#detail-dialog #dialog-detail-header{
+#detail-dialog #dialog-detail-header {
     display: inline-block;
     font-size: 24px;
     font-weight: 500;
     height: 32px;
 }
 
-#dialog-detail-header p{
+#dialog-detail-header p {
     margin-top: 0px;
     margin-bottom: 9px;
 }
 
-#detail-dialog{
+#detail-dialog {
     display: inline-block;
 }
 
-#dialog-employee-code{
+#dialog-employee-code {
     display: inline-block;
     width: 40%;
 }
 
-#dialog-employee-name{
+#dialog-employee-name {
     display: inline-block;
     width: calc(100% - 13px - 40%);
 }
 
-#detail-dialog{
+#detail-dialog {
     z-index: 100;
     background-color: white;
-    border: 1px solid #EBEBEB;;
+    border: 1px solid #EBEBEB;
 }
 
 .ui-dialog-titlebar-close {
     visibility: hidden;
 }
 
-#dialog-body-upper-right{
+#dialog-body-upper-right {
     display: inline-block;
     width: calc(50% - 20px);
 }
 
-#dialog-body-upper-left{
+#dialog-body-upper-left {
     display: inline-block;
     width: calc(50% - 20px);
 }
 
-#dialog-employee-department{
+#dialog-employee-department {
     display: inline-block;
     width: 100%;
 }
 
-#birthdate-select{
+#birthdate-select {
     width: 100%;
 }
 
-#department-select{
+#department-select {
     width: 99.5%;
 }
 
-.header-container{
+.header-container {
     background-color: white;
 }
 
-#table-contaniner{
+#table-contaniner {
     background-color: white;
 }
 
-#body-main{
-    height: 719px;
+#body-main {
+    height: 480px;
     width: calc(100% - 32px);
     overflow: scroll;
     overflow-x: hidden;
     padding-left: 16px;
 }
 
-#icon-container{
+#icon-container {
     float: right;
 }
 
-#detail-code-input{
+#detail-code-input {
     padding-right: 7px;
 }
 
-#dialog-employee-birthdate{
+#dialog-employee-birthdate {
     width: 40%;
 }
 
-#dialog-employee-date{
+#dialog-employee-date {
     width: 40%;
 }
 
-#dialog-employee-gender{
+#dialog-employee-gender {
     width: calc(100% - 43% - 8px);
     height: 62px;
     margin-left: 16px;
 }
 
-#dialog-employee-social-id{
+#dialog-employee-social-id {
     width: calc(100% - 40% - 13px);
     margin-right: 8px;
 }
 
-#social-id-number{
+#social-id-number {
     padding-right: 8px;
 }
 
-#dialog-body label{
+#dialog-body label {
     font-weight: bold;
     margin-bottom: 8px;
     font-size: 14px;
 }
 
-#address-input{
+#address-input {
     width: 98.4%;
 }
 
-#provided-date{
+#provided-date {
     padding-left: 3px;
 }
 
+.pagination {
+    display: inline-block;
+    padding: 4px;
+    height: 28px;
+}
+
+.pagination a {
+    color: black;
+    float: left;
+    padding: 4px 8px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid white;
+    font-size: 14px;
+}
+
+.pagination a.active {
+    background-color: white;
+    color: #212121;
+    border: 1px solid #E0E0E0;
+    font-weight: 500;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: white;
+}
+
+#select-records-per-page{
+    vertical-align: middle;
+}
+
+#pagination{
+    vertical-align: middle;
+}
