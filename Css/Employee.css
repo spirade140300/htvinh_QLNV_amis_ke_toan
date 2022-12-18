@@ -22,8 +22,9 @@ body {
 
 #table-footer {
     height: 56px;
-    background-color: #F4F5F7;
+    background-color: white;
     width: calc(100% - 16px);
+    margin-bottom: 16px;
 }
 
 #content {
@@ -344,7 +345,7 @@ body {
 }
 
 #body-main {
-    height: 480px;
+    height: 718px;
     width: calc(100% - 32px);
     overflow: scroll;
     overflow-x: hidden;

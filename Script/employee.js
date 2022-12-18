@@ -15,6 +15,10 @@ this.detailHelpClick = function () {
 
 }
 
+this.changePage = function(event){
+    console.log(this);
+}
+
 this.closeIconClick = function () {
     $("#detail-dialog").attr("style", "display:none");
 }
@@ -31,6 +35,10 @@ this.CallAPIToGetData = function () {
         }
     });
 }
+
+$('.employee-delete').click(function() {
+    console.log(this.employee-code);
+  });
 
 this.GetDataWithPaging = function () {
     var pageSize = $('#select-records-per-page').find(":selected").val();
@@ -51,7 +59,22 @@ this.GetDataWithPaging = function () {
     });
 }
 
-
+this.deleteEmployee = function(){
+    var employeeCode = option
+    $.ajax({
+        url: "https://amis.manhnv.net/api/v1/Employees/",
+        type: "POST",
+        data: {
+            
+        },
+        success: function (result) {
+            LoadDataToGrid(result)
+        },
+        done: function (result) {
+            console.log(result);
+        }
+    });
+}
 
 this.LoadDataToGrid = function (data) {
     if (!data.Data) {
@@ -65,9 +88,9 @@ this.LoadDataToGrid = function (data) {
     if(totalPage > 0){
         $("#pagination").empty();
         $("#pagination").append(`<a>Trước</a>`);
-        $("#pagination").append(`<a value="1" onclick="GetDataWithPaging()" class="active">1</a>`);
+        $("#pagination").append(`<a value="1" onclick="changePage()" class="active">1</a>`);
         for(let x = 1; x < totalPage; x++){
-            $("#pagination").append(`<a value="${x}" onclick="GetDataWithPaging()">${x}</a>`)
+            $("#pagination").append(`<a value="${x+1}" onclick="changePage()">${x+1}</a>`)
         }
         $("#pagination").append(`<a>Sau</a>`);
     }
@@ -75,6 +98,7 @@ this.LoadDataToGrid = function (data) {
     var arrayLength = resultData.length;
 
     for (var i = 0; i < arrayLength; i++) {
+        let employeeId = resultData[i]["EmployeeId"] ? resultData[i]["EmployeeId"] : "Không có";
         let employeeCode = resultData[i]["EmployeeCode"] ? resultData[i]["EmployeeCode"] : "Không có";
         let employeeName = resultData[i]["EmployeeName"] ? resultData[i]["EmployeeName"] : "Không có";
         let employeeGender = resultData[i]["EmployeeGender"] ? resultData[i]["EmployeeGender"] : "Không có";
@@ -86,9 +110,9 @@ this.LoadDataToGrid = function (data) {
         let employeeBankName = resultData[i]["EmployeeBankName"] ? resultData[i]["EmployeeBankName"] : "Không có";
         let employeeBankBranch = resultData[i]["EmployeeBankBranch"] ? resultData[i]["EmployeeBankBranch"] : "Không có";
         let employeeOption = `<p class="inline-block">sửa </p><select id="${employeeCode}" class="selector inline-block w-20">
-                                <option style="display: none"> </option>
+                                <option style="display: none""> </option>
                                 <option value="duplicate">Nhân bản</option>
-                                <option value="delete">Xóa</option>
+                                <option value="delete" employee-code="${employeeCode}" >Xóa</option>
                                 <option value="deactivate">Ngừng sử dụng</option>
                             </select>`;
         let newRow =
