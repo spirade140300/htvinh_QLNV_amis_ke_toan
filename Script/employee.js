@@ -13,18 +13,7 @@ this.$('select').on('change', function () {
     GetDataWithPaging();
 });
 
-<<<<<<< HEAD
-this.detailHelpClick = function () {
-
-}
-
-this.changePage = function(event){
-    console.log(this);
-}
-
-=======
 // Đón form detail
->>>>>>> d06afe130ca9b3bc7770fd0cf4914a95d11cf845
 this.closeIconClick = function () {
     $("#detail-dialog").attr("style", "display:none");
 }
