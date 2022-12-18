@@ -1,7 +1,9 @@
+// Load các thành phần chung
 $("#header").load("../Common/header.html");
 $("#footer").load("../Common/footer.html");
 $("#sidemenu").load("../Common/sidemenu.html");
 
+// Event của nút thêm mới nhân viên
 this.addNewOnClick = function () {
     $("#detail-dialog").removeAttr("style");
     $("#detail-code-input").focus();
@@ -11,27 +13,36 @@ this.$('select').on('change', function () {
     GetDataWithPaging();
 });
 
-this.detailHelpClick = function () {
-
-}
-
+// Đón form detail
 this.closeIconClick = function () {
     $("#detail-dialog").attr("style", "display:none");
 }
+// Gọi API lấy tất cả các nhân viên
+// this.CallAPIToGetData = function () {
+//     $.ajax({
+//         url: "https://amis.manhnv.net/api/v1/Employees",
+//         type: "GET",
+//         success: function (result) {
+//             LoadDataToGrid(result)
+//         },
+//         done: function (result) {
+//             console.log(result);
+//         }
+//     });
+// }
 
-this.CallAPIToGetData = function () {
-    $.ajax({
-        url: "https://amis.manhnv.net/api/v1/Employees",
-        type: "GET",
-        success: function (result) {
-            LoadDataToGrid(result)
-        },
-        done: function (result) {
-            console.log(result);
-        }
-    });
-}
+this.$('.employee-option option').each(function(){
+    debugger
+    if($(this).is(':selected')){
+        debugger
+    }
+})
 
+this.$('.employee-option').on('click', '.employee-id', function(){
+    debugger
+})
+
+// Lấy data nhân viên với phân trang
 this.GetDataWithPaging = function () {
     var pageSize = $('#select-records-per-page').find(":selected").val();
     var pageNumber = $("#pagination a.active").attr("value");
@@ -51,9 +62,36 @@ this.GetDataWithPaging = function () {
     });
 }
 
+// Lấy thông tin phòng ban
+this.GetDepartmentData = function(){
+    $.ajax({
+        url: "https://amis.manhnv.net/api/v1/Departments",
+        type: "GET",
+        success: function (result) {
+            LoadDepartmentData(result)
+        },
+        done: function (result) {
+            console.log(result);
+        }
+    });
+}
 
+// Load data phòng ban vào thẻ select
+this.LoadDepartmentData = function(data){
+    if (!data) {
+        return;
+    }
+    var arrayLength = data.length;
+    for (var i = 0; i < arrayLength; i++) {
+        let departmentName = data[i]["DepartmentName"] ? data[i]["DepartmentName"] : "Không có";
+        let departmentId = data[i]["DepartmentId"] ? data[i]["DepartmentId"] : "Không có";
+        $("#department-select").append(`<option value="${departmentId}">${departmentName}</option>`);
+    }
+}
 
+// Load data vào trong grid employee list 
 this.LoadDataToGrid = function (data) {
+    // check xem co data ko
     if (!data.Data) {
         return;
     }
@@ -67,7 +105,7 @@ this.LoadDataToGrid = function (data) {
         $("#pagination").append(`<a>Trước</a>`);
         $("#pagination").append(`<a value="1" onclick="GetDataWithPaging()" class="active">1</a>`);
         for(let x = 1; x < totalPage; x++){
-            $("#pagination").append(`<a value="${x}" onclick="GetDataWithPaging()">${x}</a>`)
+            $("#pagination").append(`<a value="${x+1}" onclick="GetDataWithPaging()">${x+1}</a>`)
         }
         $("#pagination").append(`<a>Sau</a>`);
     }
@@ -75,6 +113,7 @@ this.LoadDataToGrid = function (data) {
     var arrayLength = resultData.length;
 
     for (var i = 0; i < arrayLength; i++) {
+        let employeeId =  resultData[i]["EmployeeId"] ? resultData[i]["EmployeeId"] : "Không có";
         let employeeCode = resultData[i]["EmployeeCode"] ? resultData[i]["EmployeeCode"] : "Không có";
         let employeeName = resultData[i]["EmployeeName"] ? resultData[i]["EmployeeName"] : "Không có";
         let employeeGender = resultData[i]["EmployeeGender"] ? resultData[i]["EmployeeGender"] : "Không có";
@@ -85,10 +124,10 @@ this.LoadDataToGrid = function (data) {
         let employeeBankNumber = resultData[i]["EmployeeBankNumber"] ? resultData[i]["EmployeeBankNumber"] : "Không có";
         let employeeBankName = resultData[i]["EmployeeBankName"] ? resultData[i]["EmployeeBankName"] : "Không có";
         let employeeBankBranch = resultData[i]["EmployeeBankBranch"] ? resultData[i]["EmployeeBankBranch"] : "Không có";
-        let employeeOption = `<p class="inline-block">sửa </p><select id="${employeeCode}" class="selector inline-block w-20">
+        let employeeOption = `<p class="inline-block">sửa </p><select id="${employeeCode}" class="selector inline-block w-20" onchange="manageEmployee(this);">
                                 <option style="display: none"> </option>
                                 <option value="duplicate">Nhân bản</option>
-                                <option value="delete">Xóa</option>
+                                <option value="delete" employee-id="${employeeId}">Xóa</option>
                                 <option value="deactivate">Ngừng sử dụng</option>
                             </select>`;
         let newRow =
@@ -111,13 +150,21 @@ this.LoadDataToGrid = function (data) {
     }
 
     $("#total-record").html(totalRecord);
-
 }
 
-this.initPaging = function(){
+this.manageEmployee = function(e){
+    
     
 }
 
-AppenDataToGrid = function () { }
+this.addNewEmployee = function(){
+    let employeeCode = $("#detail-code-input").val();
+    
+}
 
-GetDataWithPaging();
+this.init = function(){
+    GetDataWithPaging();
+    GetDepartmentData();
+}
+
+this.init();

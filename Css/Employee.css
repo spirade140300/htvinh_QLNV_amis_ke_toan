@@ -78,13 +78,13 @@ body {
 #employee-table {
     margin: auto;
     border-spacing: 0px;
-    fixedHeader: true;
 }
 
 #employee-table tr {
     border: solid 1px #E0E0E0;
     font-size: 14px;
     height: 18px;
+    position: sticky;
 }
 
 #employee-table th {
@@ -264,8 +264,8 @@ body {
     padding: 24px;
     position: absolute;
     width: auto;
-    top: 100px;
-    right: 400px;
+    top: 60px;
+    right: 250px;   
 }
 
 #detail-dialog #is-customer {
